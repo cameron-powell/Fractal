@@ -1,4 +1,5 @@
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class Panel extends JPanel {
@@ -6,6 +7,7 @@ public class Panel extends JPanel {
     /*variables*/
     private int width;
     private int height;
+    private Color backgroundColor;
 
     /*constructors*/
     public Panel() {
@@ -13,7 +15,8 @@ public class Panel extends JPanel {
         width = 0;
         height = 0;
         //set the background color
-        setBackground(Color.BLACK);
+        backgroundColor = Color.BLACK;
+        setBackground(backgroundColor);
     }
 
     public Panel(int w, int h) {
@@ -21,16 +24,19 @@ public class Panel extends JPanel {
         width = w;
         height = h;
         //set the background color
-        setBackground(Color.BLACK);
+        backgroundColor = Color.BLACK;
+        setBackground(backgroundColor);
     }
 
     /*accessors*/
     public int getWidth() {return width;}
     public int getHeight() {return height;}
+    public Color getBackgroundColor() {return backgroundColor;}
 
     /*mutators*/
     public void setWidth(int w) {width = w;}
     public void setHeight(int h) {height = h;}
+    public void setBackgroundColor(Color c) {backgroundColor = c;}
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

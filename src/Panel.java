@@ -44,7 +44,8 @@ public class Panel extends JPanel {
     /*paint*/
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        fractal  = new CircleFractal(width, height, g);
+        //fractal  = new CircleFractal(width, height, g);
+        fractal = new CantorFractal(width, height, g);
         fractal.drawFractal();
     }
 

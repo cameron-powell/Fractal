@@ -33,12 +33,15 @@ public class Panel extends JPanel {
     public int getWidth() {return width;}
     public int getHeight() {return height;}
     public Color getBackgroundColor() {return backgroundColor;}
+    public Fractal getFractal() {return fractal;}
 
     /*mutators*/
     public void setWidth(int w) {width = w;}
     public void setHeight(int h) {height = h;}
     public void setBackgroundColor(Color c) {backgroundColor = c;}
+    public void setFractal(Fractal f) {fractal = f;}
 
+    /*paint*/
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         fractal  = new CircleFractal(width, height, g);

@@ -41,17 +41,17 @@ public class Panel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setColor(Color.WHITE);
-        //g.drawOval(width/2 - 200/2,height/2-200/2,200,200);
-        circleFractal(width/2, height/2, 256, g);
+        circleFractal(width / 2, height / 2 - 16, 256, g);
     }
 
     private void circleFractal(int xLoc, int yLoc, int radius, Graphics g) {
         g.drawOval(xLoc-radius/2,yLoc-radius/2,radius,radius);
-        if(radius > 32) {
-            circleFractal(xLoc+radius/2,yLoc,(int)(radius*.64),g);
-            circleFractal(xLoc-radius/2,yLoc,(int)(radius*.64),g);
-            circleFractal(xLoc,yLoc+radius/2,(int)(radius*.64),g);
-            circleFractal(xLoc,yLoc-radius/2,(int)(radius*.64),g);
+
+        if(radius > 8) {
+            circleFractal(xLoc+radius/2,yLoc,radius/2,g);
+            circleFractal(xLoc-radius/2,yLoc,radius/2,g);
+            circleFractal(xLoc,yLoc+radius/2,radius/2,g);
+            circleFractal(xLoc,yLoc-radius/2,radius/2,g);
         }
     }
 

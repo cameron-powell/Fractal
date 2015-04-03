@@ -8,6 +8,7 @@ public class Panel extends JPanel {
     private int width;
     private int height;
     private Color backgroundColor;
+    private Fractal fractal;
 
     /*constructors*/
     public Panel() {
@@ -40,19 +41,8 @@ public class Panel extends JPanel {
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.WHITE);
-        circleFractal(width / 2, height / 2 - 16, 256, g);
-    }
-
-    private void circleFractal(int xLoc, int yLoc, int radius, Graphics g) {
-        g.drawOval(xLoc-radius/2,yLoc-radius/2,radius,radius);
-
-        if(radius > 8) {
-            circleFractal(xLoc+radius/2,yLoc,radius/2,g);
-            circleFractal(xLoc-radius/2,yLoc,radius/2,g);
-            circleFractal(xLoc,yLoc+radius/2,radius/2,g);
-            circleFractal(xLoc,yLoc-radius/2,radius/2,g);
-        }
+        fractal  = new CircleFractal(width, height, g);
+        fractal.drawFractal();
     }
 
 }

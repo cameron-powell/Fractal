@@ -2,6 +2,7 @@ import java.awt.*;
 
 public class CircleFractal extends Fractal {
 
+    /*variables*/
     private int screenWidth;
     private int screenHeight;
     private int radius;
